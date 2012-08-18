@@ -6,7 +6,7 @@
 (savehist-mode 1)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
-;;;machine•Êİ’è
+;;;machineåˆ¥è¨­å®š
 (cond
  ((eq window-system 'x)
   (load "~/Dropbox/.emacs.d/linux.el")
@@ -21,7 +21,7 @@
 
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-;; ‚±‚Ì2s‚ğ‰Á‚¦‚é
+;; ã“ã®2è¡Œã‚’åŠ ãˆã‚‹
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (setq url-http-attempt-keepalives nil) ; To fix MELPA problem.
 (setq package-user-dir "~/Dropbox/.emacs.d/elpa")
@@ -30,7 +30,7 @@
 
 (global-linum-mode t)
 
-;; ess‚Í make all; make install
+;; essã¯ make all; make install
 (require 'ess-site)
 (setq ess-ask-for-ess-directory nil)
 (define-key ess-mode-map [(shift return)] 'ess-eval-line-and-step)
@@ -42,13 +42,13 @@
 
 (keyboard-translate ?\C-h ?\C-?)
 (global-set-key (kbd "C-x ?") 'help-command)
-;; C-x b‚Åƒ~ƒjƒoƒbƒtƒ@‚Éƒoƒbƒtƒ@Œó•â•\¦
-;; C-z‚Åsuspend frame@—v‚ç‚È‚¢
+;; C-x bã§ãƒŸãƒ‹ãƒãƒƒãƒ•ã‚¡ã«ãƒãƒƒãƒ•ã‚¡å€™è£œè¡¨ç¤º
+;; C-zã§suspend frameã€€è¦ã‚‰ãªã„
 (global-unset-key "\C-z")
-;; M-k‚ÅƒJƒŒƒ“ƒgƒoƒbƒtƒ@‚ğ•Â‚¶‚é
+;; M-kã§ã‚«ãƒ¬ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’é–‰ã˜ã‚‹
 (define-key global-map (kbd "M-k") 'kill-this-buffer)
 
-;; C-return‚Å‹éŒ`‘I‘ğ
+;; C-returnã§çŸ©å½¢é¸æŠ
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 (global-set-key "\M-h" 'backward-kill-word)
@@ -63,7 +63,7 @@
 (global-set-key (kbd "C-.") 'end-of-buffer)
 ;;;(global-set-key [?\M-k]'(lambda() (interactive)(move-beginning-of-line nil)(kill-line)))
 (global-set-key [?\C-\;] 'undo)
-;; ƒJ[ƒ\ƒ‹“®‚©‚³‚¸‚ÉƒXƒNƒ[ƒ‹
+;; ã‚«ãƒ¼ã‚½ãƒ«å‹•ã‹ã•ãšã«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
 (defun scroll-up-in-place (n) (interactive "p")  (scroll-down n))
 (defun scroll-down-in-place (n) (interactive "p")  (scroll-up n))
 (global-set-key "\M-p" 'scroll-up-in-place)
@@ -72,7 +72,7 @@
           '(lambda ()
              (setq mode-line-buffer-identification 'buffer-file-truename)))
 (defalias 'exit 'save-buffers-kill-emacs)
-(setq-default indent-tabs-mode nil) ;tab‚Å‚Í‚È‚­space‚ğg‚¤
+(setq-default indent-tabs-mode nil) ;tabã§ã¯ãªãspaceã‚’ä½¿ã†
 
 (global-set-key [f12] 'uncomment-region)
 (global-set-key [f11] 'comment-region)
@@ -116,10 +116,10 @@
 (setq anything-c-moccur-anything-idle-delay 0.2
        ;;anything-idle-delay'
        anything-c-moccur-higligt-info-line-flag t
-       ; ;anything-c-moccur-dmoccur'‚È‚Ç‚ÌƒRƒ}ƒ“ƒh‚Åƒoƒbƒtƒ@‚Ìî•ñ‚ğƒnƒCƒ‰ƒCƒg‚·‚é
+       ; ;anything-c-moccur-dmoccur'ãªã©ã®ã‚³ãƒãƒ³ãƒ‰ã§ãƒãƒƒãƒ•ã‚¡ã®æƒ…å ±ã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆã™ã‚‹
        anything-c-moccur-enable-auto-look-flag t
        anything-c-moccur-enable-initial-pattern t)
-       ; ;anything-c-moccur-occur-by-moccur'‚Ì‹N“®‚Éƒ|ƒCƒ“ƒg‚ÌˆÊ’u‚Ì’PŒê‚ğ‰Šúƒpƒ^[ƒ“‚É‚·‚é
+       ; ;anything-c-moccur-occur-by-moccur'ã®èµ·å‹•æ™‚ã«ãƒã‚¤ãƒ³ãƒˆã®ä½ç½®ã®å˜èªã‚’åˆæœŸãƒ‘ã‚¿ãƒ¼ãƒ³ã«ã™ã‚‹
 (global-set-key (kbd "M-o") 'anything-c-moccur-occur-by-moccur)
 (global-set-key (kbd "C-M-o") 'anything-c-moccur-dmoccur)
 (require 'popwin)
@@ -127,7 +127,7 @@
 (push '("*anything*" :height 40) popwin:special-display-config)
 
 
-;;;screen‚ğã‰º‹t‚³‚Ü‚É
+;;;screenã‚’ä¸Šä¸‹é€†ã•ã¾ã«
 (defun swap-screen-with-screen()
   "Swap two screen, leaving cursor at current window"
   (interactive)
@@ -144,16 +144,16 @@
 (require 'ob)
 (setq org-export-default-language "ja")
 (setq org-export-html-coding-system 'utf-8)
-;;s“ª‚Ì:‚Íg‚í‚È‚¢BBEGIN_EXAMPLE, END_EXAMPLE‚Å[•ª
+;;è¡Œé ­ã®:ã¯ä½¿ã‚ãªã„ã€‚BEGIN_EXAMPLE, END_EXAMPLEã§å……åˆ†
 (setq org-export-with-fixed-width nil)
-;;; ^‚Æ_‚ğ‰ğß‚µ‚È‚¢
+;;; ^ã¨_ã‚’è§£é‡ˆã—ãªã„
 (setq org-export-with-sub-superscripts nil)
-;;; --‚â---‚ğ‚»‚Ì‚Ü‚Üo—Í‚·‚é
+;;; --ã‚„---ã‚’ãã®ã¾ã¾å‡ºåŠ›ã™ã‚‹
 (setq org-export-with-special-strings nil)
-;;;tex, latex‚ÌƒR[ƒh‚ğ‰ğß‚µ‚È‚¢
+;;;tex, latexã®ã‚³ãƒ¼ãƒ‰ã‚’è§£é‡ˆã—ãªã„
 (setq org-export-with-LaTex-fragments nil)
 (setq org-export-with-Tex-macros nil)
-;;;‰üs‚ğ”½‰f‚·‚é
+;;;æ”¹è¡Œã‚’åæ˜ ã™ã‚‹
 ;;;(setq org-export-preserve-breaks t)
 
 ;;org-remember
@@ -194,7 +194,7 @@
 
 ;; untilities
 (setq x-select-enable-clipboard t)
-;; ƒfƒtƒHƒ‹ƒg‚Ìinit.el‚Ì––”ö‚É’Ç‰Á
+;; ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®init.elã®æœ«å°¾ã«è¿½åŠ 
 ;; My Settings for gnupack {{{1
 (global-set-key [?\C-\;] 'undo)
 (global-set-key [f12] 'uncomment-region)
@@ -203,16 +203,16 @@
 
 ;; ------------------------------------------------------------------------
 ;;; @ modeline
-;;; s”Ô†‚Ì•\¦
+;;; è¡Œç•ªå·ã®è¡¨ç¤º
 (line-number-mode 1)
-;;; —ñ”Ô†‚Ì•\¦
+;;; åˆ—ç•ªå·ã®è¡¨ç¤º
 (column-number-mode t)
-;;; ‚Ì•\¦
+;;; æ™‚åˆ»ã®è¡¨ç¤º
    (require 'time)
    (setq display-time-24hr-format t)
    (setq display-time-string-forms '(24-hours ":" minutes))
    (display-time-mode t)
-;;; cp932ƒGƒ“ƒR[ƒh‚Ì•\¦‚ğuPv‚Æ‚·‚é
+;;; cp932ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰æ™‚ã®è¡¨ç¤ºã‚’ã€ŒPã€ã¨ã™ã‚‹
    (coding-system-put 'cp932 :mnemonic ?P)
    (coding-system-put 'cp932-dos :mnemonic ?P)
    (coding-system-put 'cp932-unix :mnemonic ?P)
@@ -220,67 +220,67 @@
 
 ;; ------------------------------------------------------------------------
 ;;; @ cursor
-;;; ƒJ[ƒ\ƒ‹“_–Å•\¦
+;;; ã‚«ãƒ¼ã‚½ãƒ«ç‚¹æ»…è¡¨ç¤º
 (blink-cursor-mode 0)
 
-;;; ƒXƒNƒ[ƒ‹‚ÌƒJ[ƒ\ƒ‹ˆÊ’u‚ÌˆÛ
+;;; ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«æ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã®ç¶­æŒ
 (setq scroll-preserve-screen-position t)
 
-;; ƒXƒNƒ[ƒ‹s”iˆês‚²‚Æ‚ÌƒXƒNƒ[ƒ‹j
+;; ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«è¡Œæ•°ï¼ˆä¸€è¡Œã”ã¨ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ï¼‰
 (setq vertical-centering-font-regexp ".*")
 (setq scroll-conservatively 35)
 (setq scroll-margin 0)
 (setq scroll-step 1)
 
-;; ‰æ–ÊƒXƒNƒ[ƒ‹‚Ìd•¡s”
+;; ç”»é¢ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«æ™‚ã®é‡è¤‡è¡Œæ•°
 (setq next-screen-context-lines 1)
 
 ;; ------------------------------------------------------------------------
 ;; @ default setting
 
-;;; ‹N“®ƒƒbƒZ[ƒW‚Ì”ñ•\¦
+;;; èµ·å‹•ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®éè¡¨ç¤º
 (setq inhibit-startup-message t)
 
-;;; ƒXƒ^[ƒgƒAƒbƒv‚ÌƒGƒR[—ÌˆæƒƒbƒZ[ƒW‚Ì”ñ•\¦
+;;; ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ—æ™‚ã®ã‚¨ã‚³ãƒ¼é ˜åŸŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®éè¡¨ç¤º
 (setq inhibit-startup-echo-area-message -1)
 
 ;; ------------------------------------------------------------------------
 ;; @ backup
 
-   ;; •ÏXƒtƒ@ƒCƒ‹‚ÌƒoƒbƒNƒAƒbƒv
+   ;; å¤‰æ›´ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—
    (setq make-backup-files nil)
 
-   ;; •ÏXƒtƒ@ƒCƒ‹‚Ì”Ô†‚Â‚«ƒoƒbƒNƒAƒbƒv
+   ;; å¤‰æ›´ãƒ•ã‚¡ã‚¤ãƒ«ã®ç•ªå·ã¤ããƒãƒƒã‚¯ã‚¢ãƒƒãƒ—
    (setq version-control nil)
 
-   ;; •ÒW’†ƒtƒ@ƒCƒ‹‚ÌƒoƒbƒNƒAƒbƒv
+   ;; ç·¨é›†ä¸­ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—
    (setq auto-save-list-file-name nil)
    (setq auto-save-list-file-prefix nil)
 
-   ;; •ÒW’†ƒtƒ@ƒCƒ‹‚ÌƒoƒbƒNƒAƒbƒvæ
+   ;; ç·¨é›†ä¸­ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—å…ˆ
    (setq auto-save-file-name-transforms
          `((".*" ,temporary-file-directory t)))
 
-   ;; •ÒW’†ƒtƒ@ƒCƒ‹‚ÌƒoƒbƒNƒAƒbƒvŠÔŠui•bj
+   ;; ç·¨é›†ä¸­ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—é–“éš”ï¼ˆç§’ï¼‰
    (setq auto-save-timeout 30)
 
-   ;; •ÒW’†ƒtƒ@ƒCƒ‹‚ÌƒoƒbƒNƒAƒbƒvŠÔŠui‘ÅŒ®j
+   ;; ç·¨é›†ä¸­ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—é–“éš”ï¼ˆæ‰“éµï¼‰
    (setq auto-save-interval 500)
 
-   ;; ƒoƒbƒNƒAƒbƒv¢‘ã”
+   ;; ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ä¸–ä»£æ•°
    (setq kept-old-versions 1)
    (setq kept-new-versions 2)
 
-   ;; ã‘‚«‚ÌŒx•\¦
+   ;; ä¸Šæ›¸ãæ™‚ã®è­¦å‘Šè¡¨ç¤º
    ;- (setq trim-versions-without-asking nil)
 
-   ;; ŒÃ‚¢ƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹‚Ìíœ
+   ;; å¤ã„ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã®å‰Šé™¤
    (setq delete-old-versions t)
 
 ;; ------------------------------------------------------------------------
 ;; @ scroll
 
-   ;; ƒoƒbƒtƒ@‚Ìæ“ª‚Ü‚ÅƒXƒNƒ[ƒ‹ƒAƒbƒv
+   ;; ãƒãƒƒãƒ•ã‚¡ã®å…ˆé ­ã¾ã§ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚¢ãƒƒãƒ—
    (defadvice scroll-up (around scroll-up-around)
      (interactive)
      (let* ( (start_num (+ 1 (count-lines (point-min) (point))) ) )
@@ -293,7 +293,7 @@
              ad-do-it)) )) )
    (ad-activate 'scroll-up)
 
-   ;; ƒoƒbƒtƒ@‚ÌÅŒã‚Ü‚ÅƒXƒNƒ[ƒ‹ƒ_ƒEƒ“
+   ;; ãƒãƒƒãƒ•ã‚¡ã®æœ€å¾Œã¾ã§ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³
    (defadvice scroll-down (around scroll-down-around)
      (interactive)
      (let* ( (start_num (+ 1 (count-lines (point-min) (point)))) )
@@ -315,13 +315,13 @@
 (require 'moccur-edit)
 
 
-;; söŒë—p
+;; è©¦è¡ŒéŒ¯èª¤ç”¨
 (require 'open-junk-file)
-;C-x C-z‚ÅsöŒë—pƒtƒ@ƒCƒ‹‚ğŠJ‚­
+;C-x C-zã§è©¦è¡ŒéŒ¯èª¤ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 (global-set-key (kbd "C-x C-z") 'open-junk-file)
-;;;®‚Ì•]‰¿Œ‹‰Ê‚ğ’ß‚·‚é
+;;;å¼ã®è©•ä¾¡çµæœã‚’æ³¨é‡ˆã™ã‚‹
 (require 'lispxmp)
-;;emacs-lisp-mode‚ÅC-c C-d‚ğ‰Ÿ‚·‚Æ’ß‚³‚ê‚é@ ;;M-; M-; ‚Å ’ß
+;;emacs-lisp-modeã§C-c C-dã‚’æŠ¼ã™ã¨æ³¨é‡ˆã•ã‚Œã‚‹ã€€ ;;M-; M-; ã§ æ³¨é‡ˆ
 (define-key emacs-lisp-mode-map (kbd "C-c C-d") 'lispxmp)
 (defun lisp-xmp-comment-toggle ()
   (interactive)
@@ -330,26 +330,26 @@
 	(replace-match "")
       (end-of-line)(insert " ; =>"))))
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'lisp-xmp-comment-toggle)
-;;ƒJƒbƒR‚Ì‘Î‰‚ğ•Û‚µ‚Ä•ÒW‚·‚éİ’è
+;;ã‚«ãƒƒã‚³ã®å¯¾å¿œã‚’ä¿æŒã—ã¦ç·¨é›†ã™ã‚‹è¨­å®š
 (require 'paredit)
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'ielm-mode-hook 'enable-paredit-mode)
 (require 'auto-async-byte-compile)
-;;©“®ƒRƒ“ƒpƒCƒ‹‚ğ–³Œø‚É‚·‚éƒtƒ@ƒCƒ‹–¼‚Ì³‹K•\Œ»
+;;è‡ªå‹•ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚’ç„¡åŠ¹ã«ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«åã®æ­£è¦è¡¨ç¾
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 (add-hook 'emacs-lisp-mode-hook  'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
-(setq eldoc-idle-delay 0.2) ;;‚·‚®‚É•\¦‚µ‚È‚¢
-(setq eldoc-minor-mode-string "") ;; ƒ‚[ƒhƒ‰ƒCƒ“‚ÉElDoc‚Æ•\¦‚µ‚È‚¢
-;; ’Ş‚è‡‚¢‚Ì‚Æ‚ê‚éƒJƒbƒR‚ğƒnƒCƒ‰ƒCƒg‚·‚é
+(setq eldoc-idle-delay 0.2) ;;ã™ãã«è¡¨ç¤ºã—ãªã„
+(setq eldoc-minor-mode-string "") ;; ãƒ¢ãƒ¼ãƒ‰ãƒ©ã‚¤ãƒ³ã«ElDocã¨è¡¨ç¤ºã—ãªã„
+;; é‡£ã‚Šåˆã„ã®ã¨ã‚Œã‚‹ã‚«ãƒƒã‚³ã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆã™ã‚‹
 (show-paren-mode 1)
-;;‰üs‚Æ“¯‚ÉƒCƒ“ƒfƒ“ƒg‚às‚¤
+;;æ”¹è¡Œã¨åŒæ™‚ã«ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚‚è¡Œã†
 (global-set-key "\C-m" 'newline-and-indent)
-;; find-functionƒL[‚ğŠ„‚è“–‚Ä‚é
+;; find-functionã‚­ãƒ¼ã‚’å‰²ã‚Šå½“ã¦ã‚‹
 (find-function-setup-keys)
 
 ;;dired-x, omit some type of files
@@ -358,7 +358,7 @@
                              (setq dired-omit-files-p t)
                              (dired-omit-mode 1)))
 
-;;;;encodig‚Ì•×‹­ 2011/12/24 rubikitch‚Ìƒƒ‹ƒ}ƒK
+;;;;encodigã®å‹‰å¼· 2011/12/24 rubikitchã®ãƒ¡ãƒ«ãƒã‚¬
 ;;(modify-coding-system-alist 'file "test.txt" 'euc-jp)
 ;;(progn
 ;;  (delete-file "~/tmp/test.txt")
@@ -404,23 +404,23 @@
 (require 'dropdown-list)
 (yas/global-mode 1)
 (call-interactively 'yas/reload-all);workaround
-;;;anything-complete.el‚ğg‚Á‚Ä‚¢‚é‚È‚ç yas/completing-prompt ‚Ì‚İ‚Å‚à‚æ‚¢
+;;;anything-complete.elã‚’ä½¿ã£ã¦ã„ã‚‹ãªã‚‰ yas/completing-prompt ã®ã¿ã§ã‚‚ã‚ˆã„
 (setq yas/prompt-functions '(yas/dropdown-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
 
-;; Œ»İs‚ğƒnƒCƒ‰ƒCƒg
+;; ç¾åœ¨è¡Œã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆ
 (global-hl-line-mode 1)
 
-;; grep‚Å•ÒWOK
+;; grepã§ç·¨é›†OK
 (require 'wgrep)
 (setq wgrep-enable-key "r")
 
-;; ƒL[‚Ì“ñ“x‰Ÿ‚µ‚È‚Ç‚ğƒRƒ}ƒ“ƒh‚É
+;; ã‚­ãƒ¼ã®äºŒåº¦æŠ¼ã—ãªã©ã‚’ã‚³ãƒãƒ³ãƒ‰ã«
 (require 'key-chord)
 (setq key-chord-two-keys-delay 0.04)
 (key-chord-mode 1)
 
 
-;; •¶šA’PŒê‘I‘ğ
+;; æ–‡å­—ã€å˜èªé¸æŠ
 (require 'thing-opt)
 (define-thing-commands)
 (key-chord-define-global "ii" 'mark-word*)

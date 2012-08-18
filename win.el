@@ -13,7 +13,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family #("ƒƒCƒŠƒI" 0 4 (charset cp932-2-byte)) :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
+ '(default ((t (:family #("ãƒ¡ã‚¤ãƒªã‚ª" 0 4 (charset cp932-2-byte)) :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
 
 (load-library "migemo")
 (setq migemo-command "cmigemo")
